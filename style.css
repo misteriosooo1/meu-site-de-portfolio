@@ -1,0 +1,259 @@
+:root {
+  --primary-color: #9932cc;
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --card-bg: #f9f9f9;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --card-bg: #1e1e1e;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+#toggle-theme {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-color);
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+nav a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s, text-decoration 0.3s ease;
+}
+
+nav a:hover {
+  color: #7a28aa;
+  text-decoration: underline;
+}
+
+section {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.projeto {
+  background-color: var(--card-bg);
+  border: 1px solid var(--primary-color);
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, color 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.6s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.projeto:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.projeto a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.projeto a:hover {
+  text-decoration: underline;
+}
+
+a.button,
+a[target="_blank"] {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+a.button:hover,
+a[target="_blank"]:hover {
+  background-color: #7b24a9;
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  margin-top: 2rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* Animações */
+@keyframes slideUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container-header {
+      flex-direction: column;
+      text-align: center;
+  }
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.perfil img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.perfil .info h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.perfil .info span {
+  font-size: 1.5rem;
+  color: #eee;
+}
+
+/* Estilos para Redes Sociais */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #7a28aa;
+}
+
+/* Adicionando ícones das redes sociais */
+.social-links i {
+  font-size: 2rem;
+}
+
+.social-icon.x img {
+  width: 30px;  /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  margin-right: 0.5rem;  /* Espaçamento entre o ícone e o texto */
+}

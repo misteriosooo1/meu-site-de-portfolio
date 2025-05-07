@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio - Gabriel Marques</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Link para a CDN do Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container-header">
+        <div class="perfil">
+            <img src="assets/images/gabrielimages.jpg" alt="Foto de Gabriel Marques">
+          <div class="info">
+            <h1>Gabriel Marques</h1>
+            <span>Desenvolvedor Full Stack</span>
+          </div>
+        </div>
+        <button id="toggle-theme">🌓</button>
+      </div>      
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="sobre" class="fade-in-scroll">
+    <h2>Sobre mim</h2>
+    <p>Sou um programador apaixonado por tecnologia, com experiência em desenvolvimento web e mobile. Gosto de criar soluções eficientes com design limpo.</p>
+  </section>
+
+  <section id="projetos" class="fade-in-scroll">
+    <h2>Projetos</h2>
+    <div class="projetos-grid">
+      <div class="projeto fade-in-scroll" data-modal="modal1">
+        <h3>Sistema de Agendamento</h3>
+        <p>Aplicação React Native com PostgreSQL para agendamentos de horários em uma barbearia.</p>
+        <p><strong>Tecnologias:</strong> React Native, Node.js, PostgreSQL</p>
+        <a href="#" target="_blank">Ver Projeto</a>
+      </div>
+      <div class="projeto fade-in-scroll" data-modal="modal2">
+        <h3>Jogo de Damas</h3>
+        <p>Jogo de damas com movimentação, captura múltipla e promoção a dama, feito em JavaScript.</p>
+        <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+        <a href="#" target="_blank">Ver Projeto</a>
+      </div>
+      <div class="projeto fade-in-scroll" data-modal="modal3">
+        <h3>Conecta Saúde</h3>
+        <p>Site informativo com mapa interativo, focado em atendimento digital na área da saúde.</p>
+        <p><strong>Tecnologias:</strong> HTML, CSS, JS, API Maps</p>
+        <a href="#" target="_blank">Ver Projeto</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="fade-in-scroll">
+    <h2>Contato</h2>
+    <p>Email: gb.mf.2167@gmail.com</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/gabriel-marques-67424226b/" target="_blank" class="social-icon linkedin">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/misteriosooo1" target="_blank" class="social-icon github">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="https://x.com/gabrielmf19_" target="_blank" class="social-icon twitter">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+      <a href="https://www.instagram.com/gabrielmarques" target="_blank" class="social-icon instagram">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>&copy; 2025 Gabriel Marques. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Modais -->
+  <div class="modal" id="modal1">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3>Sistema de Agendamento</h3>
+      <p>Aplicativo para agendar horários em barbearias.</p>
+      <p><strong>Tecnologias:</strong> React Native, Node.js, PostgreSQL</p>
+      <a href="#" target="_blank">Abrir Projeto</a>
+    </div>
+  </div>
+
+  <div class="modal" id="modal2">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3>Jogo de Damas</h3>
+      <p>Jogo com regras e múltiplas capturas.</p>
+      <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+      <a href="#" target="_blank">Ver Projeto</a>
+    </div>
+  </div>
+
+  <div class="modal" id="modal3">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3>Conecta Saúde</h3>
+      <p>Mapa interativo e informações de atendimento.</p>
+      <p><strong>Tecnologias:</strong> HTML, CSS, JS, API Maps</p>
+      <a href="#" target="_blank">Abrir Projeto</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
