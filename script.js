@@ -1,9 +1,22 @@
+const checkbox = document.getElementById("checkbox");
+const themeLabel = document.getElementById("theme-label");
+
 // Aplicar tema salvo ao carregar
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
-  document.body.classList.add("dark");
-  document.getElementById("toggle-theme").textContent = "☀️";
+    document.body.classList.add("dark");
+    checkbox.checked = true;
 }
+
+// Definir o texto fixo como "Modo Escuro"
+themeLabel.textContent = "Modo Escuro";
+
+checkbox.addEventListener("change", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+});
+
 
 // Animação ao rolar
 const fadeElems = document.querySelectorAll(".fade-in-scroll");
@@ -54,3 +67,4 @@ toggleBtn.addEventListener("click", () => {
 
   toggleBtn.textContent = isDark ? "☀️" : "🌙";
 });
+

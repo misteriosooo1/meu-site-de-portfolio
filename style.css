@@ -257,3 +257,226 @@ footer {
   height: auto;
   margin-right: 0.5rem;  /* Espaçamento entre o ícone e o texto */
 }
+
+.linguagens {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.linguagens li {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Cores originais das linguagens */
+.html {
+  color: #e34f26;
+}
+
+.css {
+  color: #1572b6;
+}
+
+.js {
+  color: #f7df1e;
+}
+
+.react {
+  color: #61dafb;
+}
+
+.node {
+  color: #339933;
+}
+
+.postgres {
+  color: #336791;
+}
+
+.python {
+  color: #3776ab;
+}
+
+.linguagens i {
+  font-size: 1.4rem;
+}
+
+.titulo-linguagens {
+  color: #7a28aa; /* azul semelhante ao do VS Code */
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .perfil {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  nav a {
+    margin: 0 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+.modal {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+.modal.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color:#24a950;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#theme-label {
+  margin-left: 1rem;
+  color: white;
+  font-weight: bold;
+}
+
+.social-icon {
+  color: var(--primary-color);
+  font-size: 1.5rem; /* Ajuste o tamanho conforme necessário */
+  text-decoration: none; /* Remove o sublinhado padrão */
+  transition: color 0.3s, text-decoration 0.3s; /* Adiciona transição suave */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon:hover {
+  color: #420168; /* Cor ao passar o mouse */
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+#contato p strong {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-right: 0.5rem; /* Adiciona um pequeno espaço à direita */
+}
+
+.social-button {
+    display: inline-flex; /* Para alinhar ícone e texto */
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 0.5rem; /* Espaçamento */
+    margin-right: 0.5rem; /* Espaçamento entre os botões */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.social-button:hover {
+    background-color: #7b24a9;
+    transform: scale(1.05);
+}
+
+.social-button i {
+    margin-right: 0.5rem; /* Espaço entre o ícone e o texto */
+    font-size: 1.2rem; /* Ajuste o tamanho do ícone se necessário */
+}
+
+/* Estilo específico para o texto "Email" para diferenciá-lo do título "Email:" */
+#contato p strong {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-right: 0.5rem; /* Espaço entre "Email:" e o botão */
+    display: inline-block; /* Para controlar a margem */
+}
+
+/* Ajuste a margem superior do botão de e-mail para alinhar com os outros */
+#contato p .social-button.email {
+    margin-top: 0;
+}
+
+/* Estilos para os ícones das redes sociais (mantendo os existentes) */
+.social-icons {
+    display: flex;
+    justify-content: flex-start; /* Alinhar os botões à esquerda */
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    /* Reutilizando os estilos de .social-button */
+}
+
+.social-icons i {
+    font-size: 1.5rem; /* Ajuste o tamanho dos ícones das redes sociais se necessário */
+    margin-right: 0.5rem; /* Espaço entre o ícone e o texto (se houver) */
+}
