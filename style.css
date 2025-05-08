@@ -1,3 +1,6 @@
+/* ===================== */
+/*        VARIÁVEIS      */
+/* ===================== */
 :root {
   --primary-color: #9932cc;
   --bg-color: #ffffff;
@@ -11,6 +14,9 @@ body.dark {
   --card-bg: #1e1e1e;
 }
 
+/* ===================== */
+/*     CONFIG. GLOBAL    */
+/* ===================== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -20,6 +26,19 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+a {
+  transition: color 0.3s, text-decoration 0.3s;
+  text-decoration: none;
+}
+
+/* ===================== */
+/*        HEADER         */
+/* ===================== */
 header {
   background-color: var(--primary-color);
   color: white;
@@ -43,6 +62,9 @@ header {
   cursor: pointer;
 }
 
+/* ===================== */
+/*      NAVEGAÇÃO        */
+/* ===================== */
 nav {
   display: flex;
   justify-content: center;
@@ -53,10 +75,8 @@ nav {
 
 nav a {
   color: var(--primary-color);
-  text-decoration: none;
   margin: 0 1.5rem;
   font-weight: bold;
-  transition: color 0.3s, text-decoration 0.3s ease;
 }
 
 nav a:hover {
@@ -64,17 +84,18 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* ===================== */
+/*        SESSÕES        */
+/* ===================== */
 section {
   padding: 2rem;
   max-width: 1000px;
   margin: auto;
 }
 
-h2 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
+/* ===================== */
+/*     PROJETOS GRID     */
+/* ===================== */
 .projetos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -87,11 +108,11 @@ h2 {
   padding: 1rem;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s, color 0.3s;
   opacity: 0;
   transform: translateY(30px);
   animation: slideUp 0.6s ease-out forwards;
   animation-delay: 0.3s;
+  transition: background-color 0.3s, transform 0.3s, color 0.3s;
 }
 
 .projeto:hover {
@@ -102,36 +123,48 @@ h2 {
 }
 
 .projeto a {
-  display: inline-block;
   margin-top: 0.5rem;
   color: var(--primary-color);
   font-weight: bold;
-  text-decoration: none;
 }
 
 .projeto a:hover {
   text-decoration: underline;
 }
 
+/* ===================== */
+/*         BOTÕES        */
+/* ===================== */
 a.button,
-a[target="_blank"] {
-  display: inline-block;
+a[target="_blank"],
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--primary-color);
   color: #fff;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
-  text-decoration: none;
   font-weight: bold;
   margin-top: 0.5rem;
   transition: background-color 0.3s, transform 0.2s;
 }
 
 a.button:hover,
-a[target="_blank"]:hover {
+a[target="_blank"]:hover,
+.social-button:hover {
   background-color: #7b24a9;
   transform: scale(1.05);
 }
 
+.social-button i {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* ===================== */
+/*        FOOTER         */
+/* ===================== */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -140,18 +173,29 @@ footer {
   margin-top: 2rem;
 }
 
+/* ===================== */
+/*         MODAL         */
+/* ===================== */
 .modal {
   display: none;
   position: fixed;
   z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.modal.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
 }
 
 .modal-content {
@@ -162,11 +206,6 @@ footer {
   max-width: 600px;
   width: 90%;
   position: relative;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.modal-content h3 {
-  margin-top: 0;
 }
 
 .modal-close {
@@ -178,33 +217,9 @@ footer {
   color: var(--primary-color);
 }
 
-/* Animações */
-@keyframes slideUp {
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-.fade-in-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .container-header {
-      flex-direction: column;
-      text-align: center;
-  }
-}
-
+/* ===================== */
+/*       PERFIL          */
+/* ===================== */
 .perfil {
   display: flex;
   align-items: center;
@@ -229,35 +244,42 @@ footer {
   color: #eee;
 }
 
-/* Estilos para Redes Sociais */
-.social-links {
+/* ===================== */
+/*   REDES SOCIAIS       */
+/* ===================== */
+.social-links,
+.social-icons {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.social-links a {
+.social-links a,
+.social-icons a {
   color: var(--primary-color);
   font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
   transition: color 0.3s;
 }
 
-.social-links a:hover {
+.social-links a:hover,
+.social-icons a:hover {
   color: #7a28aa;
-}
-
-/* Adicionando ícones das redes sociais */
-.social-links i {
-  font-size: 2rem;
+  text-decoration: underline;
 }
 
 .social-icon.x img {
-  width: 30px;  /* Ajuste o tamanho conforme necessário */
+  width: 30px;
   height: auto;
-  margin-right: 0.5rem;  /* Espaçamento entre o ícone e o texto */
+  margin-right: 0.5rem;
 }
 
+/* ===================== */
+/*     LINGUAGENS        */
+/* ===================== */
 .linguagens {
   list-style: none;
   padding: 0;
@@ -274,78 +296,36 @@ footer {
   gap: 0.5rem;
 }
 
-/* Cores originais das linguagens */
-.html {
-  color: #e34f26;
-}
-
-.css {
-  color: #1572b6;
-}
-
-.js {
-  color: #f7df1e;
-}
-
-.react {
-  color: #61dafb;
-}
-
-.node {
-  color: #339933;
-}
-
-.postgres {
-  color: #336791;
-}
-
-.python {
-  color: #3776ab;
-}
-
 .linguagens i {
   font-size: 1.4rem;
 }
 
 .titulo-linguagens {
-  color: #7a28aa; /* azul semelhante ao do VS Code */
+  color: #7a28aa;
   font-weight: bold;
 }
 
-@media (max-width: 600px) {
-  .perfil {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  nav a {
-    margin: 0 0.5rem;
-    font-size: 0.9rem;
-  }
-}
+.html { color: #e34f26; }
+.css { color: #1572b6; }
+.js { color: #f7df1e; }
+.react { color: #61dafb; }
+.node { color: #339933; }
+.postgres { color: #336791; }
+.python { color: #3776ab; }
 
-.modal {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-}
-.modal.show {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
-}
-
+/* ===================== */
+/*   SWITCH DE TEMA      */
+/* ===================== */
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
 }
 
 .theme-switch {
-  display: inline-block;
-  height: 34px;
   position: relative;
+  display: inline-block;
   width: 60px;
+  height: 34px;
 }
 
 .theme-switch input {
@@ -356,45 +336,30 @@ footer {
 
 .slider {
   position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
   background-color: #ccc;
   transition: .4s;
+  cursor: pointer;
+  border-radius: 34px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
   background-color: white;
   transition: .4s;
+  border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color:#24a950;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px var(--primary-color);
+  background-color: #24a950;
 }
 
 input:checked + .slider:before {
   transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
 }
 
 #theme-label {
@@ -403,98 +368,44 @@ input:checked + .slider:before {
   font-weight: bold;
 }
 
-.social-icon {
-  color: var(--primary-color);
-  font-size: 1.5rem; /* Ajuste o tamanho conforme necessário */
-  text-decoration: none; /* Remove o sublinhado padrão */
-  transition: color 0.3s, text-decoration 0.3s; /* Adiciona transição suave */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+/* ===================== */
+/*     ANIMAÇÕES         */
+/* ===================== */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.social-icon:hover {
-  color: #420168; /* Cor ao passar o mouse */
-  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-#contato p strong {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--primary-color);
-  margin-right: 0.5rem; /* Adiciona um pequeno espaço à direita */
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.social-button {
-    display: inline-flex; /* Para alinhar ícone e texto */
+/* ===================== */
+/*     RESPONSIVIDADE    */
+/* ===================== */
+@media (max-width: 768px) {
+  .container-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 0 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .perfil {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 0.5rem; /* Espaçamento */
-    margin-right: 0.5rem; /* Espaçamento entre os botões */
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.social-button:hover {
-    background-color: #7b24a9;
-    transform: scale(1.05);
-}
-
-.social-button i {
-    margin-right: 0.5rem; /* Espaço entre o ícone e o texto */
-    font-size: 1.2rem; /* Ajuste o tamanho do ícone se necessário */
-}
-
-/* Estilo específico para o texto "Email" para diferenciá-lo do título "Email:" */
-#contato p strong {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-right: 0.5rem; /* Espaço entre "Email:" e o botão */
-    display: inline-block; /* Para controlar a margem */
-}
-
-/* Ajuste a margem superior do botão de e-mail para alinhar com os outros */
-#contato p .social-button.email {
-    margin-top: 0;
-}
-
-/* Estilos para os ícones das redes sociais (mantendo os existentes) */
-.social-icons {
-  display: flex;
-  justify-content: flex-start; /* Alinha os botões à esquerda */
-  gap: 1rem;
-  margin-top: 1.5rem;
-  flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha */
-}
-
-.social-icons a {
-    /* Reutilizando os estilos de .social-button */
-}
-
-.social-icons i {
-    font-size: 1.5rem; /* Ajuste o tamanho dos ícones das redes sociais se necessário */
-    margin-right: 0.5rem; /* Espaço entre o ícone e o texto (se houver) */
-}
-
-#contato {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
-  display: flex;
-  flex-direction: column; /* Alinha os itens verticalmente por padrão */
-  align-items: flex-start; /* Alinha os itens à esquerda */
-}
-
-#contato p {
-  margin-bottom: 1rem; /* Mantenha alguma margem inferior */
-}
-
-#contato p:first-of-type { /* Seleciona o primeiro parágrafo (o do email) */
-  margin-bottom: 1.5rem; /* Aumenta um pouco a margem para separar do título */
+    text-align: center;
+  }
 }
