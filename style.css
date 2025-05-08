@@ -466,10 +466,11 @@ input:checked + .slider:before {
 
 /* Estilos para os ícones das redes sociais (mantendo os existentes) */
 .social-icons {
-    display: flex;
-    justify-content: flex-start; /* Alinhar os botões à esquerda */
-    gap: 1rem;
-    margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-start; /* Alinha os botões à esquerda */
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha */
 }
 
 .social-icons a {
@@ -479,4 +480,21 @@ input:checked + .slider:before {
 .social-icons i {
     font-size: 1.5rem; /* Ajuste o tamanho dos ícones das redes sociais se necessário */
     margin-right: 0.5rem; /* Espaço entre o ícone e o texto (se houver) */
+}
+
+#contato {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column; /* Alinha os itens verticalmente por padrão */
+  align-items: flex-start; /* Alinha os itens à esquerda */
+}
+
+#contato p {
+  margin-bottom: 1rem; /* Mantenha alguma margem inferior */
+}
+
+#contato p:first-of-type { /* Seleciona o primeiro parágrafo (o do email) */
+  margin-bottom: 1.5rem; /* Aumenta um pouco a margem para separar do título */
 }
