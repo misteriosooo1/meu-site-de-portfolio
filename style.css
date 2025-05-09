@@ -258,7 +258,7 @@ footer {
 
 .social-links a,
 .social-icons a {
-  color: var(--primary-color);
+  color: var(--second-color);
   font-size: 1.5rem;
   display: inline-flex;
   align-items: center;
@@ -267,7 +267,7 @@ footer {
 
 .social-links a:hover,
 .social-icons a:hover {
-  color: #7a28aa;
+  color: #ffffff;
   text-decoration: underline;
 }
 
